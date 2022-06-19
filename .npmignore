@@ -8,6 +8,6 @@ tslint.json
 .gitignore
 .prettierignore
 .prettierrc
-jestconfig.json
+jest.config.ts
 tslint.json
 rollup.config.js

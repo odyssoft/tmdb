@@ -1,14 +1,11 @@
-import TV from 'tv'
+import Search from './search'
+import TV from './tv'
 
-class TheMovieDatabase {
-  private apiKey: string
-  constructor(apiKey: string) {
-    this.apiKey = apiKey
-  }
+export * from './types'
 
-  TV = (show?: number) => new TV(this.apiKey, show)
-}
-
-const TMDB = (apiKey: string) => new TheMovieDatabase(apiKey)
+const TMDB = (apiKey: string) => ({
+  Search: Search(apiKey),
+  TV: TV(apiKey),
+})
 
 export default TMDB

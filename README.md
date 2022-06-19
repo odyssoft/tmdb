@@ -1,2 +1,3 @@
 # tmdb
-Unofficual TMDB v3 api wrapper, built using TypeScript and node,js
+
+Unofficial TMDB v3 api wrapper, built using TypeScript and node.js
