@@ -1,4 +1,6 @@
-const Request = async (apiKey: string, endpoint: string, options?: Object | any) => {
+import axios, { AxiosResponse } from 'axios'
+
+const Request = async (apiKey: string, endpoint: string, options?: Object | any): Promise<any> => {
   const extras: string[] = [`api_key=${apiKey}`]
   if (!options || !options.hasOwnProperty('language')) {
     extras.push('language=en-US')
@@ -15,9 +17,9 @@ const Request = async (apiKey: string, endpoint: string, options?: Object | any)
       )
     )
 
-  return fetch(`https://api.themoviedb.org/3/${endpoint}?${extras.join('&')}`).then((response) =>
-    response.json()
-  )
+  return axios
+    .get(`https://api.themoviedb.org/3${endpoint}?${extras.join('&')}`)
+    .then(({ data }: AxiosResponse) => data)
 }
 
 export default Request
