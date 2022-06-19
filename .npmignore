@@ -11,3 +11,4 @@ tslint.json
 jest.config.ts
 tslint.json
 rollup.config.js
+.github/
