@@ -1,3 +1,4 @@
+import { TVAppend } from 'types/options'
 import Request from '../request'
 import { Options, TV as Types } from '../types'
 
@@ -8,8 +9,10 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVDetails>
    */
-  GetDetails: (tv_id: number, options?: Options.AppendOptions): Promise<Types.TVDetails> =>
-    Request(apiKey, `/tv/${tv_id}`, options),
+  GetDetails: (
+    tv_id: number,
+    options?: Options.AppendOptions<TVAppend>
+  ): Promise<Types.TVDetails> => Request(apiKey, `/tv/${tv_id}`, options),
 
   /**
    * Get the aggregate credits (cast and crew) that have been added to a TV show.
