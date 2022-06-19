@@ -8,12 +8,31 @@ export interface Options {
   language?: string
 }
 
-export interface AppendOptions extends Options {
+export type TVAppend =
+  | 'account_states'
+  | 'aggregate_credits'
+  | 'alternative_titles'
+  | 'changes'
+  | 'content_ratings'
+  | 'credits'
+  | 'episode_groups'
+  | 'external_ids'
+  | 'images'
+  | 'keywords'
+  | 'recommendations'
+  | 'reviews'
+  | 'screened_theatrically'
+  | 'similar'
+  | 'translations'
+  | 'videos'
+  | 'watch/providers'
+
+export interface AppendOptions<T> extends Options {
   /**
    * Append requests within the same namespace to the response.
    * Pattern: ([\w]+)
    */
-  append_to_response?: string | string[]
+  append_to_response?: T | T[]
 }
 
 export interface PageOptions extends Options {
