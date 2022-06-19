@@ -1,6 +1,6 @@
 {
   "name": "@odyssoft/tmdb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unofficial TMDB v3 api wrapper, built using TypeScript and node.js",
   "main": "lib/index.js",
   "type": "commonjs",
