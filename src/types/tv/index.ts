@@ -1,4 +1,5 @@
 import { ResultsResponse } from '../result'
+export * from './seasons'
 
 export interface TVDetails {
   backdrop_path: string

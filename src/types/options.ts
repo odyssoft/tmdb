@@ -27,6 +27,16 @@ export type TVAppend =
   | 'videos'
   | 'watch/providers'
 
+export type SeasonsAppend =
+  | 'account_states'
+  | 'aggregate_credits'
+  | 'changes'
+  | 'credits'
+  | 'external_ids'
+  | 'images'
+  | 'translations'
+  | 'videos'
+
 export interface AppendOptions<T> extends Options {
   /**
    * Append requests within the same namespace to the response.
