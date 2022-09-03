@@ -1,8 +1,7 @@
-import { TVAppend } from 'types/options'
 import Request from '../request'
-import { Options, TV as Types } from '../types'
+import * as Types from '../types'
 
-const TV = (apiKey: string) => ({
+export const TV = (apiKey: string) => ({
   /**
    * Get the primary TV show details by id.
    * @param {number} tv_id
@@ -11,7 +10,7 @@ const TV = (apiKey: string) => ({
    */
   GetDetails: (
     tv_id: number,
-    options?: Options.AppendOptions<TVAppend>
+    options?: Types.AppendOptions<Types.TVAppend>
   ): Promise<Types.TVDetails> => Request(apiKey, `/tv/${tv_id}`, options),
 
   /**
@@ -23,7 +22,7 @@ const TV = (apiKey: string) => ({
    */
   GetAggregateCredits: (
     tv_id: number,
-    options?: Options.Options
+    options?: Types.Options
   ): Promise<Types.TVAggregateCredits> =>
     Request(apiKey, `/tv/${tv_id}/aggregate_credits`, options),
 
@@ -35,7 +34,7 @@ const TV = (apiKey: string) => ({
    */
   GetAlternativeTitles: (
     tv_id: number,
-    options?: Options.Options
+    options?: Types.Options
   ): Promise<Types.TVAlternativeTitles> =>
     Request(apiKey, `/tv/${tv_id}/alternative_titles`, options),
 
@@ -45,7 +44,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVChanges>
    */
-  GetChanges: (tv_id: number, options?: Options.Options): Promise<Types.TVChanges> =>
+  GetChanges: (tv_id: number, options?: Types.Options): Promise<Types.TVChanges> =>
     Request(apiKey, `/tv/${tv_id}/changes`, options),
 
   /**
@@ -56,7 +55,7 @@ const TV = (apiKey: string) => ({
    */
   GetContentRatings: (
     tv_id: number,
-    options?: Options.Options
+    options?: Types.Options
   ): Promise<Types.TVContentRatingResult> =>
     Request(apiKey, `/tv/${tv_id}/content_ratings`, options),
 
@@ -66,7 +65,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVCredits>
    */
-  GetCredits: (tv_id: number, options?: Options.Options): Promise<Types.TVCredits> =>
+  GetCredits: (tv_id: number, options?: Types.Options): Promise<Types.TVCredits> =>
     Request(apiKey, `/tv/${tv_id}/credits`, options),
 
   /**
@@ -75,10 +74,8 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVEpisodeGroupResult>
    */
-  GetEpisodeGroups: (
-    tv_id: number,
-    options?: Options.Options
-  ): Promise<Types.TVEpisodeGroupResult> => Request(apiKey, `/tv/${tv_id}/episode_groups`, options),
+  GetEpisodeGroups: (tv_id: number, options?: Types.Options): Promise<Types.TVEpisodeGroupResult> =>
+    Request(apiKey, `/tv/${tv_id}/episode_groups`, options),
 
   /**
    * Get the external ids for a TV show. We currently support the following external sources.
@@ -86,7 +83,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVExternalIds>
    */
-  GetExternalIDs: (tv_id: number, options?: Options.Options): Promise<Types.TVExternalIds> =>
+  GetExternalIDs: (tv_id: number, options?: Types.Options): Promise<Types.TVExternalIds> =>
     Request(apiKey, `/tv/${tv_id}/external_ids`, options),
 
   /**
@@ -95,7 +92,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVImages>
    */
-  GetImages: (tv_id: number, options?: Options.Options): Promise<Types.TVImages> =>
+  GetImages: (tv_id: number, options?: Types.Options): Promise<Types.TVImages> =>
     Request(apiKey, `/tv/${tv_id}/images`, options),
 
   /**
@@ -114,7 +111,7 @@ const TV = (apiKey: string) => ({
    */
   GetRecommendations: (
     tv_id: number,
-    options?: Options.PageOptions
+    options?: Types.PageOptions
   ): Promise<Types.TVRecommendationsResponse> =>
     Request(apiKey, `/tv/${tv_id}/recommendations`, options),
 
@@ -124,7 +121,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVReviewsResponse>
    */
-  GetReviews: (tv_id: number, options?: Options.PageOptions): Promise<Types.TVReviewsResponse> =>
+  GetReviews: (tv_id: number, options?: Types.PageOptions): Promise<Types.TVReviewsResponse> =>
     Request(apiKey, `/tv/${tv_id}/reviews`, options),
 
   /**
@@ -143,7 +140,7 @@ const TV = (apiKey: string) => ({
    */
   GetSimilarTVShows: (
     tv_id: number,
-    options?: Options.PageOptions
+    options?: Types.PageOptions
   ): Promise<Types.TVSimilarTVResponse> => Request(apiKey, `/tv/${tv_id}/similar`, options),
 
   /**
@@ -160,7 +157,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVVideosResponse>
    */
-  GetVideos: (tv_id: number, options?: Options.Options): Promise<Types.TVVideosResponse> =>
+  GetVideos: (tv_id: number, options?: Types.Options): Promise<Types.TVVideosResponse> =>
     Request(apiKey, `/tv/${tv_id}/videos`, options),
 
   /**
@@ -179,7 +176,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVLatest>
    */
-  GetLatest: (options?: Options.Options): Promise<Types.TVLatest> =>
+  GetLatest: (options?: Types.Options): Promise<Types.TVLatest> =>
     Request(apiKey, `/tv/latest`, options),
 
   /**
@@ -187,7 +184,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVAiringTodayResponse>
    */
-  GetTVAiringToday: (options?: Options.PageOptions): Promise<Types.TVAiringTodayResponse> =>
+  GetTVAiringToday: (options?: Types.PageOptions): Promise<Types.TVAiringTodayResponse> =>
     Request(apiKey, `/tv/airing_today`, options),
 
   /**
@@ -196,7 +193,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVOnTheAirResponse>
    */
-  GetTVOnTheAir: (options?: Options.PageOptions): Promise<Types.TVOnTheAirResponse> =>
+  GetTVOnTheAir: (options?: Types.PageOptions): Promise<Types.TVOnTheAirResponse> =>
     Request(apiKey, `/tv/on_the_air`, options),
 
   /**
@@ -204,7 +201,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVPopularResponse>
    */
-  GetPopular: (options?: Options.PageOptions): Promise<Types.TVPopularResponse> =>
+  GetPopular: (options?: Types.PageOptions): Promise<Types.TVPopularResponse> =>
     Request(apiKey, `/tv/popular`, options),
 
   /**
@@ -212,7 +209,7 @@ const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVTopRatedResponse>
    */
-  GetTopRated: (options?: Options.PageOptions): Promise<Types.TVTopRatedResponse> =>
+  GetTopRated: (options?: Types.PageOptions): Promise<Types.TVTopRatedResponse> =>
     Request(apiKey, `/tv/top_rated`, options),
 })
 

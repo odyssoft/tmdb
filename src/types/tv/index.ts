@@ -1,4 +1,5 @@
 import { ResultsResponse } from '../result'
+export * from './seasons'
 
 export interface TVDetails {
   backdrop_path: string
@@ -123,15 +124,15 @@ export interface Role {
 
 export interface TVCrew {
   adult: boolean
+  department: string
   gender: number
   id: number
+  jobs?: Job[] | null
   known_for_department: string
   name: string
   original_name: string
   popularity: number
   profile_path?: string | null
-  jobs?: Job[] | null
-  department: string
   total_episode_count: number
 }
 
@@ -257,14 +258,14 @@ export interface TVEpisodeGroupResult {
 }
 
 export interface TVExternalIds {
-  imdb_id: string
-  freebase_mid: string
-  freebase_id: string
-  tvdb_id: number
-  tvrage_id: number
-  facebook_id: string
-  instagram_id: string
-  twitter_id: string
+  imdb_id?: string
+  freebase_mid?: string
+  freebase_id?: string
+  tvdb_id?: number
+  tvrage_id?: number
+  facebook_id?: string
+  instagram_id?: string
+  twitter_id?: string
   id: number
 }
 

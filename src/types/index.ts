@@ -1,3 +1,3 @@
-export * as TV from './tv'
-export * as Options from './options'
-export * as Result from './result'
+export * from './tv'
+export * from './options'
+export * from './result'
