@@ -124,15 +124,15 @@ export interface Role {
 
 export interface TVCrew {
   adult: boolean
+  department: string
   gender: number
   id: number
+  jobs?: Job[] | null
   known_for_department: string
   name: string
   original_name: string
   popularity: number
   profile_path?: string | null
-  jobs?: Job[] | null
-  department: string
   total_episode_count: number
 }
 

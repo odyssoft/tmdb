@@ -11,7 +11,7 @@ export const TVSeason = (apiKey: string, tv_id: number) => ({
   GetDetails: (
     season: number,
     options?: Types.AppendOptions<Types.SeasonsAppend>
-  ): Promise<Types.TVSeasonDetails> => Request(apiKey, `tv/${tv_id}/season/${season}`, options),
+  ): Promise<Types.TVSeasonDetails> => Request(apiKey, `/tv/${tv_id}/season/${season}`, options),
 
   /**
    * Get the aggregate credits for TV season.
@@ -24,7 +24,7 @@ export const TVSeason = (apiKey: string, tv_id: number) => ({
     season: number,
     options?: Types.Options
   ): Promise<Types.TVSeasonAggregateCredits> =>
-    Request(apiKey, `tv/${tv_id}/season/${season}/aggregate_credits`, options),
+    Request(apiKey, `/tv/${tv_id}/season/${season}/aggregate_credits`, options),
 
   /**
    * Get the credits for TV season.
@@ -33,7 +33,7 @@ export const TVSeason = (apiKey: string, tv_id: number) => ({
    * @returns Promise<TVSeasonCredits>
    */
   GetCredits: (season: number, options?: Types.Options): Promise<Types.TVSeasonCredits> =>
-    Request(apiKey, `tv/${tv_id}/season/${season}/credits`, options),
+    Request(apiKey, `/tv/${tv_id}/season/${season}/credits`, options),
 
   /**
    * Get the external ids for a TV season. We currently support the following external sources.
@@ -41,8 +41,8 @@ export const TVSeason = (apiKey: string, tv_id: number) => ({
    * @param {options} options
    * @returns Promise<TVExternalIds>
    */
-  GetExternalIds: (season: number, options?: Types.Options): Promise<Types.TVSeasonExternalIds> =>
-    Request(apiKey, `tv/${tv_id}/season/${season}/external_ids`, options),
+  GetExternalIds: (season: number, options?: Types.Options): Promise<Types.TVExternalIds> =>
+    Request(apiKey, `/tv/${tv_id}/season/${season}/external_ids`, options),
 
   /**
    * Get the images that belong to a TV season.
@@ -51,7 +51,7 @@ export const TVSeason = (apiKey: string, tv_id: number) => ({
    * @returns Promise<TVSeasonImages>
    */
   GetImages: (season: number, options?: Types.Options): Promise<Types.TVSeasonImages> =>
-    Request(apiKey, `tv/${tv_id}/season/${season}/images`, options),
+    Request(apiKey, `/tv/${tv_id}/season/${season}/images`, options),
 
   /**
    *
@@ -60,7 +60,7 @@ export const TVSeason = (apiKey: string, tv_id: number) => ({
    * @returns Promise<TVSeasonTranslations>
    */
   GetTranslations: (season: number, options?: Types.Options): Promise<Types.TVSeasonTranslations> =>
-    Request(apiKey, `tv/${tv_id}/season/${season}/translations`, options),
+    Request(apiKey, `/tv/${tv_id}/season/${season}/translations`, options),
 
   /**
    * Get the videos that have been added to a TV season.
@@ -69,7 +69,7 @@ export const TVSeason = (apiKey: string, tv_id: number) => ({
    * @returns Promise<TVSeasonVideos>
    */
   GetVideos: (season: number, options?: Types.Options): Promise<Types.TVSeasonVideos> =>
-    Request(apiKey, `tv/${tv_id}/season/${season}/videos`, options),
+    Request(apiKey, `/tv/${tv_id}/season/${season}/videos`, options),
 })
 
 export default TVSeason
