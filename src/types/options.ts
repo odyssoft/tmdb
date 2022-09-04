@@ -37,6 +37,15 @@ export type SeasonsAppend =
   | 'translations'
   | 'videos'
 
+export type EpisodesAppend =
+  | 'account_states'
+  | 'changes'
+  | 'credits'
+  | 'external_ids'
+  | 'images'
+  | 'translations'
+  | 'videos'
+
 export interface AppendOptions<T> extends Options {
   /**
    * Append requests within the same namespace to the response.
