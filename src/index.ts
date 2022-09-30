@@ -1,5 +1,5 @@
-import TVEpisode from 'tv/episodes'
-import TVSeason from 'tv/seasons'
+import TVEpisode from './tv/episodes'
+import TVSeason from './tv/seasons'
 import Search from './search'
 import TV from './tv'
 
