@@ -1,4 +1,11 @@
-import { TVSeasonCast, TVSeasonCrew, TVSeasonGuestStar } from './seasons'
+import { TVExternalIds } from '.'
+import {
+  TVSeasonCast,
+  TVSeasonCrew,
+  TVSeasonGuestStar,
+  TVSeasonTranslations,
+  TVSeasonVideos,
+} from './seasons'
 
 export interface TVEpisode {
   air_date: string
@@ -13,6 +20,14 @@ export interface TVEpisode {
   still_path: string
   vote_average: number
   vote_count: number
+  //  Append to response
+  account_states?: any
+  changes?: any
+  credits?: TVEpisodeCredits
+  external_ids?: TVExternalIds
+  images?: TVEpisodeImages
+  translations?: TVSeasonTranslations
+  videos?: TVSeasonVideos
 }
 
 export interface TVEpisodeCrew {
