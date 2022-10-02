@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "jest",
-    "test-with-coverage": "jest --coverage"
+    "coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",

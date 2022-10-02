@@ -68,7 +68,7 @@ export const TVSeason = (apiKey: string, tv_id: number) => ({
    * @param {options} options
    * @returns Promise<TVSeasonVideo>
    */
-  GetVideos: (season: number, options?: Types.Options): Promise<Types.TVSeasonVideo> =>
+  GetVideos: (season: number, options?: Types.Options): Promise<Types.TVSeasonVideos> =>
     Request(apiKey, `/tv/${tv_id}/season/${season}/videos`, options),
 })
 

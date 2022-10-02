@@ -34,6 +34,24 @@ export interface TVDetails {
   type: string
   vote_average: number
   vote_count: number
+  //  Append to response
+  account_states?: any
+  aggregate_credits?: TVAggregateCredits
+  alternative_titles?: TVAlternativeTitles
+  changes?: TVChanges
+  content_ratings?: TVContentRatingResult
+  credits?: TVCredits
+  episode_groups?: TVEpisodeGroupResult
+  external_ids?: TVExternalIds
+  images?: TVImages
+  keywords?: TVKeywords
+  recommendations?: TVRecommendationsResponse
+  reviews?: TVReviewsResponse
+  screened_theatrically?: TVScreenedTheatrically
+  similar?: TVSimilarTVResponse
+  translations?: TVTranslations
+  videos?: TVVideosResponse
+  'watch/providers'?: TVWatchProviders
 }
 
 export interface TVCreator {

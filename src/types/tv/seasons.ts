@@ -1,4 +1,4 @@
-import { TVCast, TVCrew } from '.'
+import { TVCast, TVCrew, TVExternalIds } from '.'
 
 export interface TVSeasonDetails {
   _id: string
@@ -9,6 +9,16 @@ export interface TVSeasonDetails {
   id: number
   poster_path?: string | null | undefined
   season_number?: number
+
+  //  Append to response
+  account_states?: any
+  aggregate_credits?: TVSeasonAggregateCredits
+  changes?: any
+  credits?: TVSeasonCredits
+  external_ids?: TVExternalIds
+  images?: TVSeasonImages
+  translations?: TVSeasonTranslations
+  videos?: TVSeasonVideos
 }
 
 export interface TVSeasonEpisode {
