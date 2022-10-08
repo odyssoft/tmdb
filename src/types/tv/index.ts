@@ -3,6 +3,7 @@ export * from './episodes'
 export * from './seasons'
 
 export interface TVDetails {
+  adult?: boolean
   backdrop_path: string
   created_by?: TVCreator[] | null
   episode_run_time?: number[] | null
