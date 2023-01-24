@@ -416,7 +416,6 @@ export interface TVVideosResult {
 }
 
 export interface TVWatchProviders {
-  id: number
   results: TVWatchProviderResult
 }
 

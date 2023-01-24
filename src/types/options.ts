@@ -63,3 +63,10 @@ export interface PageOptions extends Options {
    */
   page?: number
 }
+
+export interface WatchProvidersOptions extends Options {
+  /**
+   * Use the ISO-3166-1 code to filter the providers that are available in a particular country.
+   */
+  watch_region?: string
+}
