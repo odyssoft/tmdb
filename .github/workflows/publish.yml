@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npx run build
+        run: npm run build
 
       - name: Publish
         run: |
