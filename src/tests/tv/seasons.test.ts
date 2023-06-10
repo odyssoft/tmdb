@@ -1,9 +1,11 @@
-import axios, { AxiosResponse } from 'axios'
+import axios, { AxiosRequestHeaders, AxiosResponse } from 'axios'
 
 import seasons from '../../tv/seasons'
 
 const mockAxiosResponse: AxiosResponse = {
-  config: {},
+  config: {
+    headers: {} as AxiosRequestHeaders,
+  },
   data: {},
   headers: {},
   status: 200,
