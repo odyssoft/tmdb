@@ -14,19 +14,19 @@ jobs:
     if: github.event.pull_request.merged == true
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v2.4.1
+        uses: actions/setup-node@v1
         with:
-          node-version: 13.x
+          node-version: 18.16.x
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build
-        run: npx tsc
+        run: npx run build
 
       - name: Publish
         run: |
