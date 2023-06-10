@@ -46,6 +46,17 @@ export type EpisodesAppend =
   | 'translations'
   | 'videos'
 
+export type PersonAppend =
+  | 'changes'
+  | 'combined_credits'
+  | 'external_ids'
+  | 'images'
+  | 'latest'
+  | 'movie_credits'
+  | 'tv_credits'
+  | 'tagged_images'
+  | 'translations'
+
 export interface AppendOptions<T> extends Options {
   /**
    * Append requests within the same namespace to the response.
@@ -62,6 +73,24 @@ export interface PageOptions extends Options {
    * default: 1
    */
   page?: number
+}
+
+export interface PersonChangesOptions {
+  /**
+   * format: date
+   */
+  end_date?: string
+  /**
+   * Specify which page to query.
+   * Minimum: -2147483648
+   * Maximum: 2147483647
+   * default: 1
+   */
+  page?: number
+  /**
+   * format: date
+   */
+  start_date?: string
 }
 
 export interface WatchProvidersOptions extends Options {

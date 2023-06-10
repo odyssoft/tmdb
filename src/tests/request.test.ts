@@ -1,9 +1,11 @@
-import axios, { AxiosResponse } from 'axios'
+import axios, { AxiosRequestHeaders, AxiosResponse } from 'axios'
 
 import Request from '../request'
 
 const mockAxiosResponse: AxiosResponse = {
-  config: {},
+  config: {
+    headers: {} as AxiosRequestHeaders,
+  },
   data: {},
   headers: {},
   status: 200,
