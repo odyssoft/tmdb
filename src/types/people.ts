@@ -92,6 +92,13 @@ export interface PersonDetails {
   place_of_birth?: string | null
   popularity: number
   profile_path?: string | null
+  //  append_to_response
+  changes?: PersonChanges
+  movie_credits?: PersonMovieCredits
+  tv_credits?: PersonTVCredits
+  combined_credits?: PersonCombinedCredits
+  external_ids?: PersonExternalIds
+  images?: PersonImages
 }
 
 export interface PersonExternalIds {
