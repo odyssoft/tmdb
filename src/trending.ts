@@ -9,7 +9,7 @@ export const Trending = (apiKey: string) => ({
    */
   People: (
     time_window: Types.TimeWindow = 'day',
-    options: Types.PageOptions
+    options?: Types.PageOptions
   ): Promise<Types.TrendingPeopleResponse> =>
     Request(apiKey, `/trending/person/${time_window}`, options),
 
@@ -20,7 +20,7 @@ export const Trending = (apiKey: string) => ({
    */
   TV: (
     time_window: Types.TimeWindow = 'day',
-    options: Types.PageOptions
+    options?: Types.PageOptions
   ): Promise<Types.TrendingShowsResponse> =>
     Request(apiKey, `/trending/tv/${time_window}`, options),
 })
