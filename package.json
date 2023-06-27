@@ -1,6 +1,6 @@
 {
   "name": "@odyssoft/tmdb",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Unofficial TMDB v3 api wrapper, built using TypeScript and node.js",
   "main": "lib/index.js",
   "type": "commonjs",
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/odyssoft/tmdb#readme",
   "devDependencies": {
     "@types/jest": "^29.5.2",
-    "eslint": "^8.42.0",
+    "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.5.0",
