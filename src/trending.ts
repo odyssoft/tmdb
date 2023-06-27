@@ -7,7 +7,7 @@ export const Trending = (apiKey: string) => ({
    * @param {string} time_window
    * @returns Promise<TrendingPeople>
    */
-  People: (time_window: Types.TimeWindow = 'day'): Promise<any> =>
+  People: (time_window: Types.TimeWindow = 'day'): Promise<Types.TrendingPeopleResponse> =>
     Request(apiKey, `/trending/person/${time_window}`),
 
   /**
@@ -15,7 +15,7 @@ export const Trending = (apiKey: string) => ({
    * @param {string} time_window
    * @returns Promise<TrendingShows>
    */
-  TV: (time_window: Types.TimeWindow = 'day'): Promise<any> =>
+  TV: (time_window: Types.TimeWindow = 'day'): Promise<Types.TrendingShowsResponse> =>
     Request(apiKey, `/trending/tv/${time_window}`),
 })
 
