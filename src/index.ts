@@ -13,7 +13,7 @@ const TMDB = (apiKey: string) => ({
   People: People(apiKey),
   Search: Search(apiKey),
   Season: (showId: number) => TVSeason(apiKey, showId),
-  Trending: () => Trending(apiKey),
+  Trending: Trending(apiKey),
   TV: TV(apiKey),
   WatchProviders: WatchProviders(apiKey),
 })
