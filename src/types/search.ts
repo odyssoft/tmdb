@@ -1,4 +1,4 @@
-import { Options } from '.'
+import { Options, PageOptions } from '.'
 import { FindPersonMovieKnownFor, FindPersonTVKnownFor } from './find'
 import { ResultsResponse } from './result'
 
@@ -18,7 +18,7 @@ export type SearchNoLangOptions = {
   query: string
 }
 
-export type SearchOptions = Options & {
+export type SearchOptions = PageOptions & {
   /**
    * Pass a text query to search. This value should be URI encoded.
    * minLength: 1
@@ -26,7 +26,7 @@ export type SearchOptions = Options & {
   query: string
 }
 
-export type SearchMainOptions = Options & {
+export type SearchMainOptions = PageOptions & {
   /**
    * Pass a text query to search. This value should be URI encoded.
    * minLength: 1
