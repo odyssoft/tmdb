@@ -8,7 +8,9 @@ const Search = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<SearchCompanyResponse>
    */
-  Companies: (options: Types.SearchNoLangOptions): Promise<Types.SearchCompanyResponse> =>
+  Companies: (
+    options: Types.SearchNoLangOptions
+  ): Promise<Types.SearchCompanyResponse> =>
     Request(apiKey, `/search/company`, options),
 
   /**
@@ -17,7 +19,9 @@ const Search = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<SearchCollectionResponse>
    */
-  Collections: (options: Types.SearchOptions): Promise<Types.SearchCollectionResponse> =>
+  Collections: (
+    options: Types.SearchOptions
+  ): Promise<Types.SearchCollectionResponse> =>
     Request(apiKey, `/search/collection`, options),
 
   /**
@@ -26,7 +30,9 @@ const Search = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<SearchKeywordResponse>
    */
-  Keywords: (options: Types.SearchNoLangOptions): Promise<Types.SearchKeywordResponse> =>
+  Keywords: (
+    options: Types.SearchNoLangOptions
+  ): Promise<Types.SearchKeywordResponse> =>
     Request(apiKey, `/search/keyword`, options),
 
   /**
@@ -35,7 +41,9 @@ const Search = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<SearchMovieResponse>
    */
-  Movies: (options: Types.SearchMainOptions): Promise<Types.SearchMovieResponse> =>
+  Movies: (
+    options: Types.SearchMainOptions
+  ): Promise<Types.SearchMovieResponse> =>
     Request(apiKey, `/search/movie`, options),
 
   /**
@@ -45,7 +53,9 @@ const Search = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<SearchMultiResponse>
    */
-  Multi: (options: Types.SearchMainOptions): Promise<Types.SearchMultiResponse> =>
+  Multi: (
+    options: Types.SearchMainOptions
+  ): Promise<Types.SearchMultiResponse> =>
     Request(apiKey, `/search/multi`, options),
 
   /**
@@ -54,7 +64,9 @@ const Search = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<SearchPersonResponse>
    */
-  People: (options: Types.SearchMainOptions): Promise<Types.SearchPersonResponse> =>
+  People: (
+    options: Types.SearchMainOptions
+  ): Promise<Types.SearchPersonResponse> =>
     Request(apiKey, `/search/person`, options),
 
   /**
@@ -63,8 +75,9 @@ const Search = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<SearchTVResponse>
    */
-  TVShows: (options: Types.SearchMainOptions): Promise<Types.SearchTVResponse> =>
-    Request(apiKey, `/search/tv`, options),
+  TVShows: (
+    options: Types.SearchMainOptions
+  ): Promise<Types.SearchTVResponse> => Request(apiKey, `/search/tv`, options),
 })
 
 export default Search

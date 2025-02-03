@@ -11,7 +11,8 @@ export const People = (apiKey: string) => ({
   GetDetails: (
     person_id: number,
     options?: Types.AppendOptions<Types.PersonAppend>
-  ): Promise<Types.PersonDetails> => Request(apiKey, `/person/${person_id}`, options),
+  ): Promise<Types.PersonDetails> =>
+    Request(apiKey, `/person/${person_id}`, options),
 
   /**
    * Get the recent changes for a person.
@@ -22,7 +23,8 @@ export const People = (apiKey: string) => ({
   GetChanges: (
     person_id: number,
     options?: Types.PersonChangesOptions
-  ): Promise<Types.PersonChanges> => Request(apiKey, `/person/${person_id}/changes`, options),
+  ): Promise<Types.PersonChanges> =>
+    Request(apiKey, `/person/${person_id}/changes`, options),
 
   /**
    * Get the combined movie and TV credits that belong to a person.
@@ -56,7 +58,8 @@ export const People = (apiKey: string) => ({
    * Get the newest created person. This is a live response and will continuously change.#
    * @returns Promise<PersonDetails>
    */
-  GetLatest: (): Promise<Types.PersonDetails> => Request(apiKey, `/person/latest`),
+  GetLatest: (): Promise<Types.PersonDetails> =>
+    Request(apiKey, `/person/latest`),
 
   /**
    * Get the movie credits for a person.
@@ -76,7 +79,10 @@ export const People = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<PersonTVCredits>
    */
-  GetTVCredits: (person_id: number, options?: Types.PageOptions): Promise<Types.PersonTVCredits> =>
+  GetTVCredits: (
+    person_id: number,
+    options?: Types.PageOptions
+  ): Promise<Types.PersonTVCredits> =>
     Request(apiKey, `/person/${person_id}/tv_credits`, options),
 })
 

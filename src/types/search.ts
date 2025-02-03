@@ -1,4 +1,5 @@
 import { Options, PageOptions } from '.'
+
 import { FindPersonMovieKnownFor, FindPersonTVKnownFor } from './find'
 import { ResultsResponse } from './result'
 
