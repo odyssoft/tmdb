@@ -44,7 +44,10 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVChanges>
    */
-  GetChanges: (tv_id: number, options?: Types.Options): Promise<Types.TVChanges> =>
+  GetChanges: (
+    tv_id: number,
+    options?: Types.Options
+  ): Promise<Types.TVChanges> =>
     Request(apiKey, `/tv/${tv_id}/changes`, options),
 
   /**
@@ -65,7 +68,10 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVCredits>
    */
-  GetCredits: (tv_id: number, options?: Types.Options): Promise<Types.TVCredits> =>
+  GetCredits: (
+    tv_id: number,
+    options?: Types.Options
+  ): Promise<Types.TVCredits> =>
     Request(apiKey, `/tv/${tv_id}/credits`, options),
 
   /**
@@ -74,7 +80,10 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVEpisodeGroupResult>
    */
-  GetEpisodeGroups: (tv_id: number, options?: Types.Options): Promise<Types.TVEpisodeGroupResult> =>
+  GetEpisodeGroups: (
+    tv_id: number,
+    options?: Types.Options
+  ): Promise<Types.TVEpisodeGroupResult> =>
     Request(apiKey, `/tv/${tv_id}/episode_groups`, options),
 
   /**
@@ -83,7 +92,10 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVExternalIds>
    */
-  GetExternalIDs: (tv_id: number, options?: Types.Options): Promise<Types.TVExternalIds> =>
+  GetExternalIDs: (
+    tv_id: number,
+    options?: Types.Options
+  ): Promise<Types.TVExternalIds> =>
     Request(apiKey, `/tv/${tv_id}/external_ids`, options),
 
   /**
@@ -92,8 +104,10 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVImages>
    */
-  GetImages: (tv_id: number, options?: Types.Options): Promise<Types.TVImages> =>
-    Request(apiKey, `/tv/${tv_id}/images`, options),
+  GetImages: (
+    tv_id: number,
+    options?: Types.Options
+  ): Promise<Types.TVImages> => Request(apiKey, `/tv/${tv_id}/images`, options),
 
   /**
    * Get the keywords that have been added to a TV show.
@@ -121,7 +135,10 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVReviewsResponse>
    */
-  GetReviews: (tv_id: number, options?: Types.PageOptions): Promise<Types.TVReviewsResponse> =>
+  GetReviews: (
+    tv_id: number,
+    options?: Types.PageOptions
+  ): Promise<Types.TVReviewsResponse> =>
     Request(apiKey, `/tv/${tv_id}/reviews`, options),
 
   /**
@@ -129,7 +146,9 @@ export const TV = (apiKey: string) => ({
    * @param {number} tv_id
    * @returns Promise<TVScreenedTheatrically>
    */
-  GetScreenedTheatrically: (tv_id: number): Promise<Types.TVScreenedTheatrically> =>
+  GetScreenedTheatrically: (
+    tv_id: number
+  ): Promise<Types.TVScreenedTheatrically> =>
     Request(apiKey, `/tv/${tv_id}/screened_theatrically`),
 
   /**
@@ -141,7 +160,8 @@ export const TV = (apiKey: string) => ({
   GetSimilarTVShows: (
     tv_id: number,
     options?: Types.PageOptions
-  ): Promise<Types.TVSimilarTVResponse> => Request(apiKey, `/tv/${tv_id}/similar`, options),
+  ): Promise<Types.TVSimilarTVResponse> =>
+    Request(apiKey, `/tv/${tv_id}/similar`, options),
 
   /**
    * Get a list of the translations that exist for a TV show.
@@ -157,7 +177,10 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVVideosResponse>
    */
-  GetVideos: (tv_id: number, options?: Types.Options): Promise<Types.TVVideosResponse> =>
+  GetVideos: (
+    tv_id: number,
+    options?: Types.Options
+  ): Promise<Types.TVVideosResponse> =>
     Request(apiKey, `/tv/${tv_id}/videos`, options),
 
   /**
@@ -184,7 +207,9 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVAiringTodayResponse>
    */
-  GetTVAiringToday: (options?: Types.PageOptions): Promise<Types.TVAiringTodayResponse> =>
+  GetTVAiringToday: (
+    options?: Types.PageOptions
+  ): Promise<Types.TVAiringTodayResponse> =>
     Request(apiKey, `/tv/airing_today`, options),
 
   /**
@@ -193,7 +218,9 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVOnTheAirResponse>
    */
-  GetTVOnTheAir: (options?: Types.PageOptions): Promise<Types.TVOnTheAirResponse> =>
+  GetTVOnTheAir: (
+    options?: Types.PageOptions
+  ): Promise<Types.TVOnTheAirResponse> =>
     Request(apiKey, `/tv/on_the_air`, options),
 
   /**
@@ -209,7 +236,9 @@ export const TV = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<TVTopRatedResponse>
    */
-  GetTopRated: (options?: Types.PageOptions): Promise<Types.TVTopRatedResponse> =>
+  GetTopRated: (
+    options?: Types.PageOptions
+  ): Promise<Types.TVTopRatedResponse> =>
     Request(apiKey, `/tv/top_rated`, options),
 })
 

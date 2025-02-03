@@ -9,7 +9,8 @@ import WatchProviders from './watchProviders'
 export * from './types'
 
 const TMDB = (apiKey: string) => ({
-  Episode: (showId: number, season_number: number) => TVEpisode(apiKey, showId, season_number),
+  Episode: (showId: number, season_number: number) =>
+    TVEpisode(apiKey, showId, season_number),
   People: People(apiKey),
   Search: Search(apiKey),
   Season: (showId: number) => TVSeason(apiKey, showId),

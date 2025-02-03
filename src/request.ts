@@ -1,6 +1,10 @@
 import axios, { AxiosResponse } from 'axios'
 
-const Request = async (apiKey: string, endpoint: string, options?: Object | any): Promise<any> => {
+const Request = async (
+  apiKey: string,
+  endpoint: string,
+  options?: Object | any
+): Promise<any> => {
   const extras: string[] = [`api_key=${apiKey}`]
   if (!options || !options.hasOwnProperty('language')) {
     extras.push('language=en-US')

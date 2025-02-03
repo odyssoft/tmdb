@@ -7,7 +7,9 @@ const WatchProviders = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<WatchProvidersRegions>
    */
-  GetAvailableRegions: (options: Types.Options): Promise<Types.WatchProvidersRegions> =>
+  GetAvailableRegions: (
+    options: Types.Options
+  ): Promise<Types.WatchProvidersRegions> =>
     Request(apiKey, `/watch/providers/regions`),
 
   /**
@@ -15,7 +17,9 @@ const WatchProviders = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<WatchProviders>
    */
-  GetMovieProviders: (options?: Types.WatchProvidersOptions): Promise<Types.WatchProviders> =>
+  GetMovieProviders: (
+    options?: Types.WatchProvidersOptions
+  ): Promise<Types.WatchProviders> =>
     Request(apiKey, `/watch/providers/movie`, options),
 
   /**
@@ -23,7 +27,9 @@ const WatchProviders = (apiKey: string) => ({
    * @param {object} options
    * @returns Promise<WatchProviders>
    */
-  GetTVProviders: (options?: Types.WatchProvidersOptions): Promise<Types.WatchProviders> =>
+  GetTVProviders: (
+    options?: Types.WatchProvidersOptions
+  ): Promise<Types.WatchProviders> =>
     Request(apiKey, `/watch/providers/tv`, options),
 })
 

@@ -1,4 +1,5 @@
 import { ResultsResponse } from '../result'
+
 export * from './episodes'
 export * from './seasons'
 
