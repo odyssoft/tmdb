@@ -1,5 +1,6 @@
 export * from './find'
 export * from './options'
+export * from './rateLimiter'
 export * from './result'
 export * from './search'
 export * from './trending'

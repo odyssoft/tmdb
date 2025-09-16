@@ -1,10 +1,14 @@
 import axios, { AxiosResponse } from 'axios'
 
+import rateLimiter from './rateLimiter'
+
 const Request = async (
   apiKey: string,
   endpoint: string,
   options?: Object | any
 ): Promise<any> => {
+  // Wait for rate limiter to allow the request
+  await rateLimiter.waitForSlot()
   const extras: string[] = [`api_key=${apiKey}`]
   if (!options || !options.hasOwnProperty('language')) {
     extras.push('language=en-US')
