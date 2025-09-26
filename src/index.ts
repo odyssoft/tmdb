@@ -1,3 +1,4 @@
+import { Discover } from './discover'
 import People from './people'
 import rateLimiter, { RateLimiter } from './rateLimiter'
 import Search from './search'
@@ -11,6 +12,7 @@ export * from './types'
 export { RateLimiter, rateLimiter }
 
 const TMDB = (apiKey: string) => ({
+  Discover: Discover(apiKey),
   Episode: (showId: number, season_number: number) =>
     TVEpisode(apiKey, showId, season_number),
   People: People(apiKey),
