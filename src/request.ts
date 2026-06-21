@@ -1,5 +1,3 @@
-import axios, { AxiosResponse } from 'axios'
-
 import rateLimiter from './rateLimiter'
 
 const Request = async (
@@ -25,9 +23,15 @@ const Request = async (
       )
     )
 
-  return axios
-    .get(`https://api.themoviedb.org/3${endpoint}?${extras.join('&')}`)
-    .then(({ data }: AxiosResponse) => data)
+  const response = await fetch(
+    `https://api.themoviedb.org/3${endpoint}?${extras.join('&')}`
+  )
+
+  if (!response.ok) {
+    throw new Error(`TMDB request failed with status ${response.status}`)
+  }
+
+  return response.json()
 }
 
 export default Request

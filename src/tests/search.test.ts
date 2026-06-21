@@ -1,23 +1,15 @@
-import axios, { AxiosRequestHeaders, AxiosResponse } from 'axios'
-
 import search from '../search'
 
-const mockAxiosResponse: AxiosResponse = {
-  config: {
-    headers: {} as AxiosRequestHeaders,
-  },
-  data: {},
-  headers: {},
-  status: 200,
-  statusText: 'OK',
-}
-
-const mockGet = jest.fn((): Promise<any> => Promise.resolve(mockAxiosResponse))
-
-axios.get = mockGet
+const mockFetch = jest.fn(() =>
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve({}),
+  })
+)
 
 beforeEach(() => {
-  mockGet.mockClear()
+  mockFetch.mockClear()
+  ;(globalThis as any).fetch = mockFetch
 })
 
 const MOCK_API_KEY = 'MOCK_API_KEY'
@@ -28,7 +20,7 @@ describe('Search', () => {
   describe('Companies', () => {
     it('should call request with correct parameters', (done) => {
       Search.Companies({ query: 'term' }).then(() => {
-        expect(mockGet).toHaveBeenCalledWith(
+        expect(mockFetch).toHaveBeenCalledWith(
           `https://api.themoviedb.org/3/search/company?api_key=${MOCK_API_KEY}&language=en-US&query=term`
         )
         done()
@@ -38,7 +30,7 @@ describe('Search', () => {
   describe('Collections', () => {
     it('should call request with correct parameters', (done) => {
       Search.Collections({ query: 'term' }).then(() => {
-        expect(mockGet).toHaveBeenCalledWith(
+        expect(mockFetch).toHaveBeenCalledWith(
           `https://api.themoviedb.org/3/search/collection?api_key=${MOCK_API_KEY}&language=en-US&query=term`
         )
         done()
@@ -48,7 +40,7 @@ describe('Search', () => {
   describe('Keywords', () => {
     it('should call request with correct parameters', (done) => {
       Search.Keywords({ query: 'term' }).then(() => {
-        expect(mockGet).toHaveBeenCalledWith(
+        expect(mockFetch).toHaveBeenCalledWith(
           `https://api.themoviedb.org/3/search/keyword?api_key=${MOCK_API_KEY}&language=en-US&query=term`
         )
         done()
@@ -58,7 +50,7 @@ describe('Search', () => {
   describe('Movies', () => {
     it('should call request with correct parameters', (done) => {
       Search.Movies({ query: 'term' }).then(() => {
-        expect(mockGet).toHaveBeenCalledWith(
+        expect(mockFetch).toHaveBeenCalledWith(
           `https://api.themoviedb.org/3/search/movie?api_key=${MOCK_API_KEY}&language=en-US&query=term`
         )
         done()
@@ -68,7 +60,7 @@ describe('Search', () => {
   describe('Multi', () => {
     it('should call request with correct parameters', (done) => {
       Search.Multi({ query: 'term' }).then(() => {
-        expect(mockGet).toHaveBeenCalledWith(
+        expect(mockFetch).toHaveBeenCalledWith(
           `https://api.themoviedb.org/3/search/multi?api_key=${MOCK_API_KEY}&language=en-US&query=term`
         )
         done()
@@ -78,7 +70,7 @@ describe('Search', () => {
   describe('People', () => {
     it('should call request with correct parameters', (done) => {
       Search.People({ query: 'term' }).then(() => {
-        expect(mockGet).toHaveBeenCalledWith(
+        expect(mockFetch).toHaveBeenCalledWith(
           `https://api.themoviedb.org/3/search/person?api_key=${MOCK_API_KEY}&language=en-US&query=term`
         )
         done()
@@ -88,7 +80,7 @@ describe('Search', () => {
   describe('TVShows', () => {
     it('should call request with correct parameters', (done) => {
       Search.TVShows({ query: 'term' }).then(() => {
-        expect(mockGet).toHaveBeenCalledWith(
+        expect(mockFetch).toHaveBeenCalledWith(
           `https://api.themoviedb.org/3/search/tv?api_key=${MOCK_API_KEY}&language=en-US&query=term`
         )
         done()

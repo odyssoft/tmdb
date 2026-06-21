@@ -1,13 +1,17 @@
 import rateLimiter from '../rateLimiter'
 import Request from '../request'
 
-// Mock axios to avoid making real API calls
-jest.mock('axios', () => ({
-  get: jest.fn(() => Promise.resolve({ data: { success: true } })),
-}))
+const mockFetch = jest.fn(() =>
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve({ success: true }),
+  })
+)
 
 describe('Request with Rate Limiting Integration', () => {
   beforeEach(() => {
+    mockFetch.mockClear()
+    ;(globalThis as any).fetch = mockFetch
     rateLimiter.reset()
     jest.clearAllMocks()
   })
@@ -59,19 +63,16 @@ describe('Request with Rate Limiting Integration', () => {
   })
 
   it('should pass through request parameters correctly', async () => {
-    const axios = require('axios')
-
     await Request('test-api-key', '/test-endpoint', { query: 'test', page: 1 })
 
-    expect(axios.get).toHaveBeenCalledWith(
+    expect(mockFetch).toHaveBeenCalledWith(
       'https://api.themoviedb.org/3/test-endpoint?api_key=test-api-key&language=en-US&query=test&page=1'
     )
   })
 
   it('should handle request errors properly', async () => {
-    const axios = require('axios')
     const error = new Error('Network error')
-    axios.get.mockRejectedValueOnce(error)
+    mockFetch.mockRejectedValueOnce(error)
 
     await expect(Request('test-api-key', '/test-endpoint')).rejects.toThrow(
       'Network error'
